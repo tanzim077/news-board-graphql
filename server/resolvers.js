@@ -1,3 +1,4 @@
+import { GraphQLError } from "graphql";
 import { News, NewsMedia } from "./db.js";
 
 function rejectIf(condition) {
@@ -8,9 +9,27 @@ function rejectIf(condition) {
 
 export const resolvers = {
   Query: {
-    newsMedia: (_root, { id }) => NewsMedia.findById(id),
-    news: (_root, { id }) => News.findById(id),
-    newses: () => News.findAll(),
+    newsMedia: async (_root, { id }) => {
+      const newsMedia = await NewsMedia.findById(id);
+      if (!newsMedia) {
+        throw notFoundError(`News not found for  ${id}`);
+      }
+      return newsMedia;
+    },
+    news: async (_root, { id }) => {
+      const news = await News.findById(id);
+      if (!news) {
+        throw notFoundError(`News not found for  ${id}`);
+      }
+      return news;
+    },
+    newses: async () => {
+      const newses = await News.findAll();
+      if (!newses.length) {
+        throw notFoundError(`No News  found `);
+      }
+      return newses;
+    },
   },
 
   Mutation: {
@@ -39,4 +58,12 @@ export const resolvers = {
   News: {
     newsMedia: (news) => NewsMedia.findById(news.newsMediaId),
   },
+};
+
+const notFoundError = (message) => {
+  return new GraphQLError(message, {
+    extensions: {
+      code: "404",
+    },
+  });
 };
