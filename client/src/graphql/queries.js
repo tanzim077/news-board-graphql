@@ -1,17 +1,17 @@
-import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import { ApolloClient, gql, InMemoryCache } from "@apollo/client";
 
-const GRAPHQL_URL = 'http://localhost:9000/graphql';
+const GRAPHQL_URL = "http://localhost:9000/graphql";
 
 export const client = new ApolloClient({
   uri: GRAPHQL_URL,
   cache: new InMemoryCache(),
 });
 
-const JOB_DETAIL_FRAGMENT = gql`
-  fragment JobDetail on Job {
+const NEWS_DETAIL_FRAGMENT = gql`
+  fragment NewsDetail on News {
     id
     title
-    company {
+    newsMedia {
       id
       name
     }
@@ -19,13 +19,13 @@ const JOB_DETAIL_FRAGMENT = gql`
   }
 `;
 
-export const COMPANY_QUERY = gql`
-  query CompanyQuery($id: ID!) {
-    company(id: $id) {
+export const NEWSMEDIA_QUERY = gql`
+  query NewsMediaQuery($id: ID!) {
+    newsMedia(id: $id) {
       id
       name
       description
-      jobs {
+      news {
         id
         title
       }
@@ -33,21 +33,21 @@ export const COMPANY_QUERY = gql`
   }
 `;
 
-export const JOB_QUERY = gql`
-  query JobQuery($id: ID!) {
-    job(id: $id) {
-      ...JobDetail
+export const NEWS_QUERY = gql`
+  query NewsQuery($id: ID!) {
+    news(id: $id) {
+      ...NewsDetail
     }
   }
-  ${JOB_DETAIL_FRAGMENT}
+  ${NEWS_DETAIL_FRAGMENT}
 `;
 
-export const JOBS_QUERY = gql`
-  query JobsQuery {
-    jobs {
+export const NEWSES_QUERY = gql`
+  query NewsesQuery {
+    newses {
       id
       title
-      company {
+      newsMediaId {
         id
         name
       }
@@ -55,11 +55,11 @@ export const JOBS_QUERY = gql`
   }
 `;
 
-export const CREATE_JOB_MUTATION = gql`
-  mutation CreateJobMutation($input: CreateJobInput!) {
-    job: createJob(input: $input) {
-      ...JobDetail
+export const CREATE_NEWS_MUTATION = gql`
+  mutation CreateNewsMutation($input: CreateNewsInput!) {
+    news: createNews(input: $input) {
+      ...NewsDetail
     }
   }
-  ${JOB_DETAIL_FRAGMENT}
+  ${NEWS_DETAIL_FRAGMENT}
 `;

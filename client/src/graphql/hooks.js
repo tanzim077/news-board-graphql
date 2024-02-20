@@ -1,9 +1,9 @@
-import { useMutation, useQuery } from '@apollo/client';
-import { getAccessToken } from '../auth';
-import { COMPANY_QUERY, CREATE_JOB_MUTATION, JOBS_QUERY, JOB_QUERY } from './queries';
+import { useMutation, useQuery } from "@apollo/client";
+import { getAccessToken } from "../auth";
+import { CREATE_NEWS_MUTATION, NEWSES_QUERY, NEWSMEDIA_QUERY, NEWS_QUERY } from "./queries";
 
 export function useCompany(id) {
-  const { data, loading, error } = useQuery(COMPANY_QUERY, {
+  const { data, loading, error } = useQuery(NEWSMEDIA_QUERY, {
     variables: { id },
   });
   return {
@@ -14,17 +14,19 @@ export function useCompany(id) {
 }
 
 export function useCreateJob() {
-  const [mutate, { loading, error }] = useMutation(CREATE_JOB_MUTATION);
+  const [mutate, { loading, error }] = useMutation(CREATE_NEWS_MUTATION);
   return {
     createJob: async (title, description) => {
-      const { data: { job } } = await mutate({
+      const {
+        data: { job },
+      } = await mutate({
         variables: { input: { title, description } },
         context: {
-          headers: { 'Authorization': 'Bearer ' + getAccessToken() },
+          headers: { Authorization: "Bearer " + getAccessToken() },
         },
         update: (cache, { data: { job } }) => {
           cache.writeQuery({
-            query: JOB_QUERY,
+            query: NEWS_QUERY,
             variables: { id: job.id },
             data: { job },
           });
@@ -37,20 +39,20 @@ export function useCreateJob() {
   };
 }
 
-export function useJob(id) {
-  const { data, loading, error } = useQuery(JOB_QUERY, {
+export function useNews(id) {
+  const { data, loading, error } = useQuery(NEWS_QUERY, {
     variables: { id },
   });
   return {
-    job: data?.job,
+    news: data?.job,
     loading,
     error: Boolean(error),
   };
 }
 
-export function useJobs() {
-  const { data, loading, error } = useQuery(JOBS_QUERY, {
-    fetchPolicy: 'network-only',
+export function useNewses() {
+  const { data, loading, error } = useQuery(NEWSES_QUERY, {
+    fetchPolicy: "network-only",
   });
   return {
     jobs: data?.jobs,

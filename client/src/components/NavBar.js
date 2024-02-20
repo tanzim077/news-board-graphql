@@ -1,5 +1,5 @@
-import { Link } from 'react-router-dom';
-import { logout } from '../auth';
+import { Link } from "react-router-dom";
+import { logout } from "../auth";
 
 function NavBar({ loggedIn, onLogout }) {
   const handleLogout = () => {
