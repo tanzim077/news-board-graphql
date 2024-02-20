@@ -1,0 +1,36 @@
+type Query {
+  newsMedia(id: ID!): NewsMedia
+  news(id: ID!): News
+  newses: [News!]
+}
+
+type Mutation {
+  createNews(input: CreateNewsInput!): News
+  deleteNews(id: ID!): News
+  updateNews(input: UpdateNewsInput!): News
+}
+
+type NewsMedia {
+  id: ID!
+  name: String!
+  description: String
+  news: [News!]
+}
+
+type News {
+  id: ID!
+  title: String!
+  newsMedia: NewsMedia!
+  description: String
+}
+
+input CreateNewsInput {
+  title: String!
+  description: String
+}
+
+input UpdateNewsInput {
+  id: ID!
+  title: String!
+  description: String
+}
