@@ -52,11 +52,11 @@ export const resolvers = {
   },
 
   NewsMedia: {
-    news: (newsMedia) => News.findAll((news) => news.newsMediaId === newsMedia.id),
+    news: async (newsMedia) => await News.findAll((news) => news.newsMediaId === newsMedia.id),
   },
 
   News: {
-    newsMedia: (news) => NewsMedia.findById(news.newsMediaId),
+    newsMedia: async (news) => await NewsMedia.findById(news.newsMediaId),
   },
 };
 

@@ -3,12 +3,12 @@
     "id": "uogQAZnLcAlT6lMuNbpQg",
     "email": "alice@demo.io",
     "password": "alice123",
-    "companyId": "pVbRRBQtMVw6lUAkj1k43"
+    "newsMediaId": "pVbRRBQtMVw6lUAkj1k43"
   },
   {
     "id": "i0Nn6qvicHP5DTuKTyaq0",
     "email": "bob@demo.io",
     "password": "bob123",
-    "companyId": "wvdB54Gqbdp_NZTXK9Tue"
+    "newsMediaId": "wvdB54Gqbdp_NZTXK9Tue"
   }
 ]
