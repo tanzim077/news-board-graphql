@@ -2,31 +2,31 @@
   {
     "id": "soP9m8MdKeQX_ZXZOCSaL",
     "newsMediaId": "pVbRRBQtMVw6lUAkj1k43",
-    "title": "Frontend Developer",
-    "description": "We are looking for a Frontend Developer familiar with React."
+    "title": "Breaking: Cyberattack Hits Global Financial Institutions, Threatening Data Security",
+    "description": "A massive cyberattack targets major financial institutions worldwide, jeopardizing data security. Experts warn of potential financial fallout and urge enhanced cybersecurity measures to prevent further breaches."
   },
   {
     "id": "yX71WsWqBRAFuMAIDj4W0",
     "newsMediaId": "wvdB54Gqbdp_NZTXK9Tue",
-    "title": "Full-Stack Developer",
-    "description": "We are looking for a Full-Stack Developer familiar with Node.js, Express, and React."
+    "title": "Political Turmoil in Eastern Europe: Protests Erupt Following Controversial Election Results",
+    "description": "Eastern European nations witness widespread protests amid allegations of electoral fraud and government corruption. Tensions escalate as demonstrators demand accountability and electoral transparency."
   },
   {
     "id": "ujXXXjSBmd0o9NJXMZDdT",
-    "title": "Senior DevOps Engineer",
     "newsMediaId": "pVbRRBQtMVw6lUAkj1k43",
-    "description": "We need somebody to restart the servers when they fall over."
+    "title": "Amazon Rainforest Under Threat: Deforestation Rates Reach Alarming Levels",
+    "description": "Deforestation in the Amazon rainforest accelerates, reaching alarming levels despite international conservation efforts. Environmentalists raise concerns over biodiversity loss and climate impact, calling for urgent action to protect the world's largest tropical rainforest."
   },
   {
     "id": "4diUGe8AmGDijRhHhaiNm",
-    "title": "QA Tester",
-    "description": "You must be good at finding bugs.",
-    "newsMediaId": "wvdB54Gqbdp_NZTXK9Tue"
+    "newsMediaId": "wvdB54Gqbdp_NZTXK9Tue",
+    "title": "Tech Giants Face Antitrust Scrutiny: Regulatory Crackdown Looms Over Market Dominance",
+    "description": "Tech giants like Facebook, Google, and Amazon face increasing antitrust scrutiny as regulators investigate their market dominance and alleged anti-competitive practices. Legal battles loom as authorities seek to rein in Big Tech's influence."
   },
   {
     "id": "Tmo63zELubKbjxWZ9wD2T",
-    "title": "Product Owner",
-    "description": "You need to give the developers something to do otherwise they get bored.",
-    "newsMediaId": "wvdB54Gqbdp_NZTXK9Tue"
+    "newsMediaId": "wvdB54Gqbdp_NZTXK9Tue",
+    "title": "Humanitarian Crisis Unfolds: Refugee Camps Overwhelmed Amidst Conflict and Famine",
+    "description": "Refugee camps worldwide are overwhelmed as conflict, famine, and displacement escalate in various regions. Humanitarian organizations struggle to meet the growing demand for aid, highlighting the urgent need for international support and intervention."
   }
 ]
