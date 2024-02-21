@@ -3,8 +3,6 @@ import NewsList from "./NewsList";
 
 function NewsBoard() {
   const { newses, loading, error } = useNewses();
-
-  console.log("[NewsBoard]", { newses, loading, error });
   if (loading) {
     return <p>Loading...</p>;
   }

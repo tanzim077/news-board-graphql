@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import { Route, Routes } from "react-router-dom";
 import { isLoggedIn } from "./auth";
 import CompanyDetail from "./components/CompanyDetail";
-import JobDetail from "./components/JobDetail";
+import NewsDetail from "./components/JobDetail";
 import JobForm from "./components/JobForm";
 import LoginForm from "./components/LoginForm";
 import NavBar from "./components/NavBar";
@@ -31,9 +31,9 @@ function App() {
       <main className="section">
         <Routes>
           <Route path="/" element={<NewsBoard />} />
-          <Route path="/companies/:companyId" element={<CompanyDetail />} />
+          <Route path="/newsMedia/:newsMediaId" element={<CompanyDetail />} />
           <Route path="/jobs/new" element={<JobForm />} />
-          <Route path="/jobs/:jobId" element={<JobDetail />} />
+          <Route path="/newses/:newsId" element={<NewsDetail />} />
           <Route path="/login" element={<LoginForm onLogin={handleLogin} />} />
         </Routes>
       </main>

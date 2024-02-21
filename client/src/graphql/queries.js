@@ -47,7 +47,7 @@ export const NEWSES_QUERY = gql`
     newses {
       id
       title
-      newsMediaId {
+      newsMedia {
         id
         name
       }

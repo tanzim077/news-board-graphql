@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 
 function NewsItem({ news }) {
-  const title = news.company ? `${news.title} at ${news.company.name}` : news.title;
+  const title = news.newsMedia ? `${news.title} at ${news.newsMedia.name}` : news.title;
   return (
     <li className="media">
       <div className="media-content">
-        <Link to={`/jobs/${news.id}`}>{title}</Link>
+        <Link to={`/newses/${news.id}`}>{title}</Link>
       </div>
     </li>
   );

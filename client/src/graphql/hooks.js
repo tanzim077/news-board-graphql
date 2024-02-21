@@ -2,12 +2,13 @@ import { useMutation, useQuery } from "@apollo/client";
 import { getAccessToken } from "../auth";
 import { CREATE_NEWS_MUTATION, NEWSES_QUERY, NEWSMEDIA_QUERY, NEWS_QUERY } from "./queries";
 
-export function useCompany(id) {
+export function useNewsMedia(id) {
   const { data, loading, error } = useQuery(NEWSMEDIA_QUERY, {
     variables: { id },
   });
+  console.log(data);
   return {
-    company: data?.company,
+    newsMedia: data?.newsMedia,
     loading,
     error: Boolean(error),
   };
@@ -44,7 +45,7 @@ export function useNews(id) {
     variables: { id },
   });
   return {
-    news: data?.job,
+    news: data?.news,
     loading,
     error: Boolean(error),
   };
@@ -55,7 +56,7 @@ export function useNewses() {
     fetchPolicy: "network-only",
   });
   return {
-    jobs: data?.jobs,
+    newses: data?.newses,
     loading,
     error: Boolean(error),
   };
